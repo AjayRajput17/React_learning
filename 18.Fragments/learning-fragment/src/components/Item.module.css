@@ -1,7 +1,9 @@
 
 .kg-item {
-  background-color: khaki;
-  border-radius: 20px;
+
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
 }
 
 .kg-span{
@@ -9,3 +11,9 @@
   color: orangered;
  
 }
+
+.button{
+  float: right;
+  
+}
+

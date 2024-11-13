@@ -7,7 +7,7 @@ const ErrorMessage = (props) => {
   //let emptyMessage = foodItems.length === 0 ? <h3>I am still Hungry</h3> : null
 
   return (
-    <>{/* {emptyMessage} */ items.length === 0 && <h3>I am still Hungry</h3>}</>
+    <>{/* {emptyMessage} */ items.length === 0 && <h5>I am still Hungry</h5>}</>
   );
 };
 
