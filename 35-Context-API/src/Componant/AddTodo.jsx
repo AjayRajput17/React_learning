@@ -1,24 +1,14 @@
 import { useState, useRef} from "react";
 import style from "./AddTodo.module.css";
 import { MdAddTask } from "react-icons/md";
+import { useContext } from "react";
+import { TodoItemsContext } from "../store/todo-items-store";
 
-function AddTodo({ onNewItem }) {
+function AddTodo() {
 
   const todoNameElement = useRef();
   const dueDateElement = useRef();
-
-  // const [todoname, setTodoName] = useState("");
-  // const [dueDate, setDueDate] = useState("");
-
-  // const handleNameChange = (event) => {
-  //   setTodoName(event.target.value);
-    
-  // };
-
-  // const handleDateChange = (event) => {
-  //   setDueDate(event.target.value);
-    
-  // };
+  const {addNewItem} = useContext(TodoItemsContext);
 
   const handleAddButton = (event) => {
     event.preventDefault();
@@ -28,10 +18,7 @@ function AddTodo({ onNewItem }) {
     todoNameElement.current.value = "";
     dueDateElement.current.value = "";
 
-    onNewItem(todoname, dueDate);
-
-    // setDueDate("");
-    // setTodoName("");
+    addNewItem(todoname, dueDate);
 
   };
 
@@ -44,25 +31,17 @@ function AddTodo({ onNewItem }) {
               type="text"
               ref={todoNameElement}
               placeholder="Enter Todo Here"
-              // value={todoname}
-              // onChange={handleNameChange}
+            
             />
           </div>
           <div className="col-4">
             <input type="date"
             ref={dueDateElement}
-            // value={dueDate} 
-            // onChange={handleDateChange} 
+          
              />
           </div>
           <div className="col-2">
-            <button
-              // type="button"
-              className="btn btn-success aj-button"
-              // onClick={handleAddButton}
-
-              
-            >
+            <button className="btn btn-success aj-button">
               <MdAddTask />
             </button>
           </div>
